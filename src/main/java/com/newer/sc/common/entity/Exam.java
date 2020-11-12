@@ -1,7 +1,5 @@
 package com.newer.sc.common.entity;
 
-import java.sql.Date;
-
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,7 +14,7 @@ public class Exam {
 	
 	String ename;
 	
-	Date etime;
+	String etime;
 	
 	String eaddress;
 	
@@ -46,11 +44,11 @@ public class Exam {
 		this.ename = ename;
 	}
 
-	public Date getEtime() {
+	public String getEtime() {
 		return etime;
 	}
 
-	public void setEtime(Date etime) {
+	public void setEtime(String  etime) {
 		this.etime = etime;
 	}
 

@@ -22,7 +22,7 @@ public class Ctimetable {
 	
 	String ctweek;
 	
-	Date cttime;
+	String cttime;
 	
 	String ctcycle;
 
@@ -66,11 +66,11 @@ public class Ctimetable {
 		this.ctweek = ctweek;
 	}
 
-	public Date getCttime() {
+	public String getCttime() {
 		return cttime;
 	}
 
-	public void setCttime(Date cttime) {
+	public void setCttime(String cttime) {
 		this.cttime = cttime;
 	}
 
