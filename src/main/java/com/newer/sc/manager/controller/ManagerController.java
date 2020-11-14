@@ -1,8 +1,8 @@
 package com.newer.sc.manager.controller;
 
-import java.math.BigInteger;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Options;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,7 +24,7 @@ import com.newer.sc.manager.mapper.MstudentMapper;
 import com.newer.sc.manager.mapper.MteacherMapper;
 
 @RestController
-@RequestMapping("/admin")
+@RequestMapping("/manager")
 public class ManagerController {
 
 	@Autowired
@@ -39,83 +39,71 @@ public class ManagerController {
 	MmajorMapper mmajorMapper;
 
 	//查询学生所有的信息
-	@GetMapping("/getstudent")
+	@GetMapping("/student")
 	public List<Student> sfind() {
 		return mstudentMapper.findAll();
 	}
 	//根据学生id查询信息
-	@GetMapping("/getstudent/{id}")
-	public Student sload(@PathVariable BigInteger id) {
+	@GetMapping("/student/{id}")
+	public Student sload(@PathVariable int id) {
 		return mstudentMapper.findById(id);
 	}
 	//添加学生信息
-	@PostMapping("/add/student")
+	@PostMapping("/student/create")
 	public Student screate(@RequestBody Student student) {
 		mstudentMapper.create(student);
 		return student;
 	}
-	//安排学生班级
-	@PutMapping("/arrange/student/{id}")
-	public void update(@PathVariable BigInteger id,@RequestBody Student student) {
+	//修改学生信息
+	@PutMapping("/student/update/{id}")
+	public void update(@PathVariable int id,@RequestBody Student student) {
 		student.setSid(id);
 		mstudentMapper.update(student);
 	}
 		
 	//查询老师所有信息
-	@GetMapping("/getteacher")
+	@GetMapping("/teacher")
 	public List<Teacher> tfind() {
 		return mteacherMapper.findAll();
 	}
 	//根据老师id查询信息
-	@GetMapping("/getteacher/{id}")
-	public Teacher tload(@PathVariable BigInteger id) {
+	@GetMapping("/teacher/{id}")
+	public Teacher tload(@PathVariable int id) {
 		return mteacherMapper.findById(id);
 	}
 	//添加老师信息
-	@PostMapping("/add/teacher")
+	@PostMapping("/teacher/create")
 	public Teacher tcreate(@RequestBody Teacher teacher) {
 		mteacherMapper.create(teacher);
 		return teacher;
 	}
 		
 	//查询班级所有信息
-	@GetMapping("/getclass")
+	@GetMapping("/class")
 	public List<Class> cfind() {
 		return mclassMapper.findAll();
 	}
 	//根据班级id查询信息
-	@GetMapping("/getclass/{id}")
-	public Class cload(@PathVariable BigInteger id) {
+	@GetMapping("/class/{id}")
+	public Class cload(@PathVariable int id) {
 		return mclassMapper.findById(id);
 	}
-	//安排老师班级
-	@PostMapping("/arrange/teacher")
+	//添加班级信息
+	@PostMapping("/class/create")
 	public Class ccreate(@RequestBody Class class1) {
 		mclassMapper.create(class1);
 		return class1;
 	}
 		
 	//根据学院id查询信息
-	@GetMapping("/getcollege/{id}")
+	@GetMapping("/college/{id}")
 	public College coload(@PathVariable int id) {
 		return mcollegeMapper.findById(id);
 	}
-	
-	//查询学院所有信息
-	@GetMapping("/getcollege")
-	public List<College> cofind() {
-		return mcollegeMapper.findAll();
-	}
 		
 	//根据专业id查询信息
-	@GetMapping("/getmload/{id}")
+	@GetMapping("/mload/{id}")
 	public Major mload(@PathVariable int id) {
 		return mmajorMapper.findById(id);
-	}
-	
-	//查询专业所有信息
-	@GetMapping("/getmload")
-	public List<Major> mafind() {
-		return mmajorMapper.findAll();
 	}
 }

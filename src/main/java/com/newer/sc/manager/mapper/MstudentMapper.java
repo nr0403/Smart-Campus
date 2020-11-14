@@ -1,6 +1,5 @@
 package com.newer.sc.manager.mapper;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
@@ -52,7 +51,7 @@ public interface MstudentMapper {
 			@Result(column = "s_coid",property = "college",javaType =College.class,one = @One(select = "com.newer.sc.manager.mapper.McollegeMapper.findById")),
 			@Result(column = "s_maid",property = "major",javaType =Major.class,one = @One(select = "com.newer.sc.manager.mapper.MmajorMapper.findById"))
     })
-	Student findById(BigInteger id);
+	Student findById(int id);
 	
 	/**
 	 * 查询所有学生
