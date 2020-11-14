@@ -38,7 +38,7 @@ public class ManagerController {
 	@Autowired
 	MmajorMapper mmajorMapper;
 
-	//查询学生所有信息
+	//查询所有学生信息
 	@GetMapping("/getstudent")
 	public List<Student> sfind() {
 		return mstudentMapper.findAll();
