@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Student {
 	
-	Integer sid;
+	int sid;
 	
 	String sname;
 	
@@ -32,11 +32,11 @@ public class Student {
 	
 	Major major;
 
-	public Integer getSid() {
+	public int getSid() {
 		return sid;
 	}
 
-	public void setSid(Integer sid) {
+	public void setSid(int sid) {
 		this.sid = sid;
 	}
 
@@ -110,6 +110,13 @@ public class Student {
 
 	public void setMajor(Major major) {
 		this.major = major;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [sid=" + sid + ", sname=" + sname + ", sphone=" + sphone + ", spassword=" + spassword
+				+ ", sbirthday=" + sbirthday + ", ssfz=" + ssfz + ", class1=" + class1 + ", sgraduate=" + sgraduate
+				+ ", college=" + college + ", major=" + major + "]";
 	}
 	
 }
