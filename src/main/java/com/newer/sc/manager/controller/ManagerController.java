@@ -100,10 +100,22 @@ public class ManagerController {
 	public College coload(@PathVariable int id) {
 		return mcollegeMapper.findById(id);
 	}
+	
+	//查询学院所有信息
+	@GetMapping("/college")
+	public List<College> cofind() {
+		return mcollegeMapper.findAll();
+	}
 		
 	//根据专业id查询信息
 	@GetMapping("/mload/{id}")
 	public Major mload(@PathVariable int id) {
 		return mmajorMapper.findById(id);
+	}
+	
+	//查询专业所有信息
+	@GetMapping("/mload")
+	public List<Major> mlfind() {
+		return mmajorMapper.findAll();
 	}
 }
