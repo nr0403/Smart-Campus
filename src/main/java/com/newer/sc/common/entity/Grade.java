@@ -1,5 +1,7 @@
 package com.newer.sc.common.entity;
 
+import javax.persistence.Id;
+
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Grade {
 	
+	
 	Integer gid;
 	
 	Student student;
@@ -18,7 +21,7 @@ public class Grade {
 	
 	Exam exam;
 	
-	Ccie ccie;
+	Ccie ccie;	
 
 	public Integer getGid() {
 		return gid;
