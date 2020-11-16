@@ -12,7 +12,9 @@ import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import com.newer.sc.common.entity.Check;
 import com.newer.sc.common.entity.Credit;
+import com.newer.sc.common.entity.Grade;
 import com.newer.sc.common.entity.Student;
 
 /**
@@ -30,6 +32,8 @@ public interface CreditMapper {
 	@Select("select * from credit")
 	@Results(id = "creditMap",value = {
 			@Result(column = "cr_sid",property = "student",javaType =Student.class,one = @One(select = "com.newer.sc.manager.mapper.MstudentMapper.findById")),
+			@Result(column = "cr_gid",property = "grade",javaType = Grade.class,one = @One(select = "com.newer.sc.manager.mapper.ManageMapper.findGrade")),
+			@Result(column = "cr_chid",property = "check",javaType = Check.class,one = @One(select = "com.newer.sc.manager.mapper.ManageMapper.findCheck"))
     })
 	List<Credit> findAll();
 	
