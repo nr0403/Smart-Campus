@@ -19,11 +19,11 @@ public class Bursary {
 	
 	Integer bstat;
 	
-	public Integer getBstat() {
+	public Integer getBstat1() {
 		return bstat;
 	}
 
-	public void setBstat(Integer bstat) {
+	public void setBstat1(Integer bstat) {
 		this.bstat = bstat;
 	}
 
