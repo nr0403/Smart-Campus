@@ -16,6 +16,7 @@ public class Bursary {
 	Credit credit;
 	
 	Integer bmoney;
+<<<<<<< HEAD
 	
 	Integer bstat;
 	
@@ -26,6 +27,8 @@ public class Bursary {
 	public void setBstat1(Integer bstat) {
 		this.bstat = bstat;
 	}
+=======
+>>>>>>> parent of 2bd4d1f... 教师后端接口
 
 	public Integer getBid() {
 		return bid;
