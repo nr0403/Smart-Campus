@@ -58,6 +58,14 @@ public class Bursary {
 	public void setBmoney(Integer bmoney) {
 		this.bmoney = bmoney;
 	}
+
+	public Integer getBstat() {
+		return bstat;
+	}
+
+	public void setBstat(Integer bstat) {
+		this.bstat = bstat;
+	}
 	
 	
 }
