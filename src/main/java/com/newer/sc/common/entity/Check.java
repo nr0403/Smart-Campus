@@ -1,5 +1,6 @@
 package com.newer.sc.common.entity;
 
+import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
@@ -15,7 +16,7 @@ public class Check {
 	
 	Student student;
 	
-	String chdate;
+	Date chdate;
 	
 	Integer chstate;
 	
@@ -37,11 +38,11 @@ public class Check {
 		this.student = student;
 	}
 
-	public String getChdate() {
+	public Date getChdate() {
 		return chdate;
 	}
 
-	public void setChdate(String chdate) {
+	public void setChdate(Date chdate) {
 		this.chdate = chdate;
 	}
 
