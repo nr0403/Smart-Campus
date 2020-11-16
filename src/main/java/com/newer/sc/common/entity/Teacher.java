@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Teacher {
 	
-	Long tid;
+	int tid;
 	
 	String tname;
 	
@@ -28,11 +28,11 @@ public class Teacher {
 	
 	College college;
 
-	public Long getTid() {
+	public int getTid() {
 		return tid;
 	}
 
-	public void setTid(Long tid) {
+	public void setTid(int tid) {
 		this.tid = tid;
 	}
 

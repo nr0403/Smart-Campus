@@ -16,6 +16,16 @@ public class Bursary {
 	Credit credit;
 	
 	Integer bmoney;
+	
+	Integer bstat;
+	
+	public Integer getBstat() {
+		return bstat;
+	}
+
+	public void setBstat(Integer bstat) {
+		this.bstat = bstat;
+	}
 
 	public Integer getBid() {
 		return bid;

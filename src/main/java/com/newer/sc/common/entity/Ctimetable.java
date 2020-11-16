@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Ctimetable {
 	
-	Integer ctid;
+	int ctid;
 	
 	String ctname;
 	
@@ -26,11 +26,11 @@ public class Ctimetable {
 	
 	String ctcycle;
 
-	public Integer getCtid() {
+	public int getCtid() {
 		return ctid;
 	}
 
-	public void setCtid(Integer ctid) {
+	public void setCtid(int ctid) {
 		this.ctid = ctid;
 	}
 
