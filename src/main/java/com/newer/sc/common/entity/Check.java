@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 /**
  * 考勤
  * @author Amichen
@@ -38,6 +40,7 @@ public class Check {
 		this.student = student;
 	}
 
+//	@JsonSerialize(using=CustomDateSer)
 	public Date getChdate() {
 		return chdate;
 	}
