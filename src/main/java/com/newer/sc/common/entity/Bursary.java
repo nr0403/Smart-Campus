@@ -18,14 +18,6 @@ public class Bursary {
 	Integer bmoney;
 	
 	Integer bstat;
-	
-	public Integer getBstat() {
-		return bstat;
-	}
-
-	public void setBstat(Integer bstat) {
-		this.bstat = bstat;
-	}
 
 	public Integer getBid() {
 		return bid;
@@ -57,6 +49,14 @@ public class Bursary {
 
 	public void setBmoney(Integer bmoney) {
 		this.bmoney = bmoney;
+	}
+
+	public Integer getBstat() {
+		return bstat;
+	}
+
+	public void setBstat(Integer bstat) {
+		this.bstat = bstat;
 	}
 	
 	

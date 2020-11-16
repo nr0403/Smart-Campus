@@ -1,6 +1,5 @@
 package com.newer.sc.common.entity;
 
-import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Ctimetable {
 	
-	int ctid;
+	Integer ctid;
 	
 	String ctname;
 	
@@ -26,11 +25,11 @@ public class Ctimetable {
 	
 	String ctcycle;
 
-	public int getCtid() {
+	public Integer getCtid() {
 		return ctid;
 	}
 
-	public void setCtid(int ctid) {
+	public void setCtid(Integer ctid) {
 		this.ctid = ctid;
 	}
 
