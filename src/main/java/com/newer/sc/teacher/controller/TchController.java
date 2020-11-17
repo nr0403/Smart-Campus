@@ -1,5 +1,6 @@
 package com.newer.sc.teacher.controller;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ public class TchController {
 		
 		//修改学生成绩
 		@PutMapping("/{id}")
-		public void updateGrade(@PathVariable int id,@RequestBody Grade grade) {
+		public void updateGrade(@PathVariable BigInteger id,@RequestBody Grade grade) {
 			Student stu=new Student();
 			stu.setSid(id);
 			grade.setStudent(stu);

@@ -1,5 +1,6 @@
 package com.newer.sc.common.student.servic;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,29 +26,29 @@ public class StudentService {
 	studentMapper stumapper;
 
 //	查询单个学生信息
-	public Student findByid(int id) {
+	public Student findByid(BigInteger id) {
 		return stumapper.findByid(id);
 	}
 
 //	通过班级查询考试
-	public List<Exam> findByClass(int id) {
+	public List<Exam> findByClass(BigInteger id) {
 		Class findStudentClass = stumapper.findStudentClass(id);
 		return stumapper.findByStudentClass(findStudentClass.getCid());
 	}
 
 //	通过学生查班级考试信息
-	public List<Exam> findByStudentClass(int id) {
+	public List<Exam> findByStudentClass(BigInteger id) {
 		Student stu = stumapper.findByid(id);
 		Class class1 = stu.getClass1();
-		Integer cid = class1.getCid();
+		BigInteger cid = class1.getCid();
 		return stumapper.findByStudentClass(cid);
 	}
 
 //	通过学生查班级课表
-	public List<Ctimetable> findtimetable(int id) {
+	public List<Ctimetable> findtimetable(BigInteger id) {
 		Student student = stumapper.findByid(id);
 		Class class1 = student.getClass1();
-		Integer cid = class1.getCid();
+		BigInteger cid = class1.getCid();
 		return stumapper.findCtimeTableByClassId(cid);
 	}
 

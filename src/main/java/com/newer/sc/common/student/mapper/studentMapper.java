@@ -1,5 +1,6 @@
 package com.newer.sc.common.student.mapper;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
@@ -31,13 +32,13 @@ public interface studentMapper {
 			@Result(column = "s_cid", property = "class1", one = @One(select = "findClassById")),
 			@Result(column = "s_coid", property = "college", one = @One(select = "findCollege")),
 			@Result(column = "s_maid",property = "major",one = @One(select = "findMajor"))})
-	public Student findByid(int id);
+	public Student findByid(BigInteger id);
 
 //	查询班级
 	@Select("select * from class where cid=#{id}")
 	@Results(id = "findClass", value = {
 			@Result(column = "c_maid", property = "major", one = @One(select = "findMajor")) })
-	public Class findStudentClass(int id);
+	public Class findStudentClass(BigInteger id);
 
 //	查询学院
 	@Select("select * from college where coid=#{id}")
@@ -63,7 +64,7 @@ public interface studentMapper {
 			@Result(column = "e_couid",property = "course",one = @One(select = "findCourseById"))
 			
 	})
-	public List<Exam> findByStudentClass(int id);
+	public List<Exam> findByStudentClass(BigInteger id);
 	
 //	通过班级ID查班级信息
 	@Select("select * from class where cid=#{id}")
@@ -84,7 +85,7 @@ public interface studentMapper {
 					@Result(column = "ct_cid",property = "class1",one = @One(select = "findClassById")),
 					@Result(column = "ct_tid",property = "teacher",one = @One(select = "findTeacherById"))
 			})
-	public List<Ctimetable> findCtimeTableByClassId(int id);
+	public List<Ctimetable> findCtimeTableByClassId(BigInteger id);
 	
 //	通过老师id查老师
 	@Select("select * from teacher where tid=#{id}")
