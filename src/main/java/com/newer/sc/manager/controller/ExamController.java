@@ -35,13 +35,13 @@ public class ExamController {
 	}
 	
 	/**
-	 * 根据学生查询个人考试安排
-	 * @param sid
+	 * 根据id查询考试安排
+	 * @param eid
 	 * @return
 	 */
-	@GetMapping("/student/{sid}")
-	public List<Exam> findExamsByStu(@PathVariable int sid){
-		return examMapper.findExamsByStu(sid);
+	@GetMapping("/{eid}")
+	public List<Exam> findExamsByStu(@PathVariable int eid){
+		return examMapper.findExamsById(eid);
 	}
 	
 	/**
