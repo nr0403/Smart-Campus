@@ -1,5 +1,6 @@
 package com.newer.sc.common.student.controller;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,25 +30,25 @@ public class studentController {
 
 	@GetMapping("/student/{id}")
 //	查询单个学生信息
-	public Student findByid(@PathVariable int id) {
+	public Student findByid(@PathVariable BigInteger id) {
 		return stu.findByid(id);
 	}
 
 //	通过班级查询考试
 	@GetMapping("/student/examination/{id}")
-	public List<Exam> findByClass(@PathVariable int id) {
+	public List<Exam> findByClass(@PathVariable BigInteger id) {
 		return stu.findByClass(id);
 	}
 
 //	学生查询班级考试信息
 	@GetMapping("/student/class/examination/{id}")
-	public List<Exam> findByStudentClass(@PathVariable int id) {
+	public List<Exam> findByStudentClass(@PathVariable BigInteger id) {
 		return stu.findByStudentClass(id);
 	}
 
 	@GetMapping("/student/timetable/{id}")
 //	通过学生查班级课表
-	public List<Ctimetable> findtimetable(@PathVariable int id) {
+	public List<Ctimetable> findtimetable(@PathVariable BigInteger id) {
 		return stu.findtimetable(id);
 	}
 

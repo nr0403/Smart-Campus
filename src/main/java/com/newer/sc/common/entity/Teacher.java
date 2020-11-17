@@ -1,5 +1,6 @@
 package com.newer.sc.common.entity;
 
+import java.math.BigInteger;
 import java.sql.Date;
 
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Teacher {
 	
-	Long tid;
+	BigInteger tid;
 	
 	String tname;
 	
@@ -28,11 +29,11 @@ public class Teacher {
 	
 	College college;
 
-	public Long getTid() {
+	public BigInteger getTid() {
 		return tid;
 	}
 
-	public void setTid(Long tid) {
+	public void setTid(BigInteger tid) {
 		this.tid = tid;
 	}
 

@@ -1,5 +1,6 @@
 package com.newer.sc.manager.mapper;
 
+import java.math.BigInteger;
 import java.util.List;
 
 
@@ -42,7 +43,7 @@ public interface MteacherMapper {
 	@Results(id="teacherMap",value = {
 			@Result(column = "t_coid",property = "college",javaType =College.class,one = @One(select = "com.newer.sc.manager.mapper.McollegeMapper.findById")),
 			})
-	Teacher findById(int id);
+	Teacher findById(BigInteger id);
 	
 	/**
 	 * 查询所有老师信息

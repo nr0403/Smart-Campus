@@ -1,5 +1,6 @@
 package com.newer.sc.common.entity;
 
+import java.math.BigInteger;
 import java.sql.Date;
 
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Class {
 	
-	Integer cid;
+	BigInteger cid;
 	
 	String cname;
 	
@@ -22,11 +23,11 @@ public class Class {
 	
 	Date ctime;
 
-	public Integer getCid() {
+	public BigInteger getCid() {
 		return cid;
 	}
 
-	public void setCid(Integer cid) {
+	public void setCid(BigInteger cid) {
 		this.cid = cid;
 	}
 
