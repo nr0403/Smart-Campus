@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -59,7 +60,7 @@ public class CreditController {
 	 * @param credit
 	 */
 	@PutMapping()
-	void updateCredit(Credit credit) {
+	void updateCredit(@RequestBody Credit credit) {
 		creditMapper.update(credit);
 	}
 	
@@ -69,7 +70,7 @@ public class CreditController {
 	 * @param credit
 	 */
 	@PostMapping()
-	void addCredit(Credit credit) {
+	void addCredit(@RequestBody Credit credit) {
 		creditMapper.addCredit(credit);
 	}
 

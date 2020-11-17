@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -61,6 +62,15 @@ public class ExamController {
 	@PostMapping()
 	public void addExam(@RequestBody Exam exam) {
 		examMapper.addExam(exam);
+	}
+	
+	/**
+	 * 修改考试
+	 * @param exam
+	 */
+	@PutMapping()
+	public void updateExam(@RequestBody Exam exam) {
+		examMapper.updateExam(exam);
 	}
  
 }

@@ -33,7 +33,7 @@ public interface CreditMapper {
 	@Results(id = "creditMap",value = {
 			@Result(column = "cr_sid",property = "student",javaType =Student.class,one = @One(select = "com.newer.sc.manager.mapper.MstudentMapper.findById")),
 			@Result(column = "cr_gid",property = "grade",javaType = Grade.class,one = @One(select = "com.newer.sc.manager.mapper.ManageMapper.findGrade")),
-			@Result(column = "cr_chid",property = "check",javaType = Check.class,one = @One(select = "com.newer.sc.manager.mapper.ManageMapper.findCheck"))
+			@Result(column = "cr_chid",property = "check",javaType = Check.class,one = @One(select = "com.newer.sc.manager.mapper.ManageMapper.findCheckById"))
     })
 	List<Credit> findAll();
 	

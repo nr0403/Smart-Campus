@@ -10,6 +10,7 @@ import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.newer.sc.common.entity.Class;
 import com.newer.sc.common.entity.Course;
@@ -61,5 +62,12 @@ public interface ExamMapper {
 	@Insert("insert into exam (ename,etime,eaddress,e_cid,e_couid,estate)"
 			+ " values (#{ename},#{etime},#{eaddress},#{class1.cid},#{course.couid},#{estate})")
 	void addExam(Exam exam);
+	
+	/**
+	 * 更新考试
+	 * @param exam
+	 */
+	@Update("update exam set ename=#{ename},etime=#{etime},eaddress=#{eaddress},e_cid=#{class1.cid},e_couid=#{course.couid},estate=#{estate} where eid=#{eid}")
+	void updateExam(Exam exam);
 	
 }

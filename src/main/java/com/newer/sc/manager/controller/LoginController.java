@@ -2,6 +2,9 @@ package com.newer.sc.manager.controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,20 +31,31 @@ public class LoginController {
 	UserService userService;
 	
 	
+	/**
+	 * 登录控制器 登录成功返回200result  ，失败返回400result
+	 * @param loginUser
+	 * @param session
+	 * @return
+	 */
 	@PostMapping("/login")
 	@ResponseBody
 	public Result login(@RequestBody User loginUser,HttpSession session) {
 		String username = loginUser.getUsername();
 		String password = loginUser.getPassword();
 		
-		User user = userService.getUserByUsernameAndPassword(username, password);
-		System.out.println(user);
-		if (user != null) {
+		Subject subject = SecurityUtils.getSubject();
+		UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(username, password);
+		
+		try {
+			subject.login(usernamePasswordToken);
 			return new Result(200);
-		}
-		else {
+		} catch (Exception e) {
+			// TODO: handle exception
 			return new Result(400);
 		}
+			
+		
+
 	}
 	
 }

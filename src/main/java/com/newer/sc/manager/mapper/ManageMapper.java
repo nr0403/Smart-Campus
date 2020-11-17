@@ -131,12 +131,16 @@ public interface ManageMapper {
 	
 //	查询班级的课表
 	@Select("select * from ctimetable where ct_cid=#{id}")
-	@Results(
+	@Results(id = "KbMap",
 			value = {
 					@Result(column = "ct_cid",property = "class1",one = @One(select = "findClassById")),
 					@Result(column = "ct_tid",property = "teacher",one = @One(select = "findTeacherById"))
 			})
 	public List<Ctimetable> findCtimeTableByClassId(int id);
+	
+	@ResultMap(value = "KbMap")
+	@Select("select * from ctimetable where ctid=#{id}")
+	public Ctimetable findCtimeTablesById(int id);
 	
 //	通过老师id查老师
 	@Select("select * from teacher where tid=#{id}")
@@ -168,6 +172,15 @@ public interface ManageMapper {
 //	通过学生id查考勤信息
 	@Select("select * from `check` where ch_sid=#{id}")
 	public List<Check> findCheck(int sid);
+	
+	@Select("select * from `check` where chid=#{id}")
+	@Results(value = {
+			@Result(column = "ch_sid",property = "student",javaType = Student.class,one = @One(select = "findByid")),
+			@Result(column = "ch_ctid",property = "ctimetable",javaType = Ctimetable.class,one = @One(select = "findCtimeTablesById"))
+	})
+	public Check findCheckById(int id);
+	
+	
 //	学生申请奖学金
 	@Insert("insert into bursary(b_sid,b_crid) values (#{sid},#{credit})")
 	public void insertBursary(int sid,int credit);
