@@ -1,5 +1,6 @@
 package com.newer.sc.common.entity;
 
+import java.sql.Date;
 
 import org.springframework.stereotype.Component;
 

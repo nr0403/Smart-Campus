@@ -37,8 +37,8 @@ public class Student {
 		return sid;
 	}
 
-	public void setSid(BigInteger sid) {
-		this.sid = sid;
+	public void setSid(BigInteger id) {
+		this.sid = id;
 	}
 
 	public String getSname() {
